@@ -1,6 +1,8 @@
 <resources>
   <string name="app_name">Schedule</string>
-  <string name="title_home">Home</string>
-  <string name="title_dashboard">Dashboard</string>
-  <string name="title_notifications">Notifications</string>
+  <string name="title_lessons">Lessons</string>
+  <string name="title_totals">Totals</string>
+  <string name="title_learners">Learners</string>
+  <string name="title_range_date">Range Date</string>
+  <string name="title_settings">Settings</string>
 </resources>
