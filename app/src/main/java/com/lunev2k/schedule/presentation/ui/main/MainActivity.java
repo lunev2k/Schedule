@@ -11,8 +11,14 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.lunev2k.schedule.R;
 import com.lunev2k.schedule.presentation.mvp.main.MainPresenter;
 import com.lunev2k.schedule.presentation.mvp.main.MainView;
+import com.lunev2k.schedule.presentation.ui.learners.LearnersFragment;
+import com.lunev2k.schedule.presentation.ui.lessons.LessonsFragment;
+import com.lunev2k.schedule.presentation.ui.totals.TotalsFragment;
 
-public class MainActivity extends MvpAppCompatActivity implements MainView {
+public class MainActivity extends MvpAppCompatActivity implements MainView,
+    LessonsFragment.OnLessonItemClickListener,
+    TotalsFragment.OnTotalItemClickListener,
+    LearnersFragment.OnLearnerItemClickListener {
 
   @InjectPresenter
   MainPresenter presenter;
@@ -42,17 +48,26 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
 
   @Override
   public void showLessons() {
-    // TODO : Show list lessons
+    getFragmentManager()
+        .beginTransaction()
+        .replace(R.id.frame, new LessonsFragment())
+        .commit();
   }
 
   @Override
   public void showTotals() {
-    // TODO : Show list totals
+    getFragmentManager()
+        .beginTransaction()
+        .replace(R.id.frame, new TotalsFragment())
+        .commit();
   }
 
   @Override
   public void showLearners() {
-    // TODO : Show list learners
+    getFragmentManager()
+        .beginTransaction()
+        .replace(R.id.frame, new LearnersFragment())
+        .commit();
   }
 
   @Override
@@ -63,5 +78,20 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
   @Override
   public void openSettings() {
     // TODO : Open activity settings
+  }
+
+  @Override
+  public void OnLessonItemClick() {
+    // TODO : Open activity lesson view
+  }
+
+  @Override
+  public void OnTotalItemClick() {
+    // TODO : Open activity total view
+  }
+
+  @Override
+  public void OnLearnerItemClick() {
+    // TODO : Open activity learner view
   }
 }
